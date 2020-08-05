@@ -103,6 +103,7 @@ sites = pd.read_csv('D:/Project/Privacy Policy NLP/Policy-NLP/OPP-115_v1_0/OPP-1
 sites.head()
 
 sites['In 115 Set?']=sites['In 115 Set?'].apply(lambda yn: True if yn == 'Yes' else False)
+sites = sites.loc[sites['In 115 Set?'] == True]
 sites.head()
 
 #Reinterpret the categories for the sites. Find the primary category and take the mode across all columns

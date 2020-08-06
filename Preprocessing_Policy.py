@@ -1,11 +1,7 @@
 # To add a new cell, type '# %%'
 # To add a new markdown cell, type '# %% [markdown]'
 # %% [markdown]
-<<<<<<< HEAD
 # <a href="https://colab.research.google.com/github/bachvu98/Policy-NLP/blob/all-in-one/Preprocessing_Policy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-=======
-# <a href="https://colab.research.google.com/github/bachvu98/Policy-NLP/blob/master/Preprocessing_Policy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
->>>>>>> master
 # %% [markdown]
 # First, we import the require dependencies
 
@@ -102,40 +98,6 @@ mode_categories.head()
 
 
 # %%
-<<<<<<< HEAD
 mode_categories.to_csv("/content/drive/My Drive/OPP-115/OPP-115/segment_categories.csv")
-=======
-categories = list(mode_categories['category_name'].unique())
-print(categories)
-cols = {'Other': 'other',
-        'Policy Change': 'policy_change',
-        'First Party Collection/Use': 'first_party_collection_use',
-        'Third Party Sharing/Collection': 'third_party_sharing_collection',
-        'Do Not Track': 'do_not_track',
-        'User Choice/Control': 'user_choice_control',
-        'International and Specific Audiences': 'international_specific_audiences',
-        'Data Security': 'data_security',
-        'Data Retention': 'data_retention',
-        'User Access, Edit and Deletion': 'user_access_edit_deletion'}
-
-
-# %%
-#Loop through the categories and generate a set of new columns with names in cols
-binary_categories = pd.DataFrame({'Policy UID':mode_categories['Policy UID'], 'segment_id':mode_categories['segment_id'], 'segments':mode_categories['segments']})
-
-
-# %%
-for category in categories:
-    one_hot = lambda s: 1 if s.startswith(category) else 0
-    binary_categories[cols[category]] = mode_categories['category_name'].apply(one_hot)
-
-
-# %%
-binary_categories.head()
-
-
-# %%
-binary_categories.to_csv("/content/drive/My Drive/OPP-115/OPP-115/binary_segment_categories.csv")
->>>>>>> master
 
 
